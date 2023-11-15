@@ -5,6 +5,7 @@ import NxWelcome from './nx-welcome';
 import { Link, Route, Routes } from 'react-router-dom';
 
 const About = React.lazy(() => import('about/Module'));
+const AboutTabs = React.lazy(() => import('about/Tabs'));
 
 export function App() {
   return (
@@ -14,9 +15,7 @@ export function App() {
           <Link to="/">Home</Link>
         </li>
 
-        <li>
-          <Link to="/about">About</Link>
-        </li>
+        <AboutTabs />
       </ul>
       <Routes>
         <Route path="/" element={<NxWelcome title="main" />} />

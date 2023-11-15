@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "about/Module": ["about/src/remote-entry.ts"]
+      "about/Module": ["about/src/remote-entry.ts"],
+      "about/Tabs": ["about/src/app/tabs.tsx"]
     }
   },
   "exclude": ["node_modules", "tmp"]
