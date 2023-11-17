@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "start": "nx serve main --open",
+    "start": "nx serve apps/dashboard --open",
     "storybook": "nx storybook storybook-host"
   },
   "private": true,

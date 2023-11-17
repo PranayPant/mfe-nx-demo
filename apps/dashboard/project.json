@@ -1,7 +1,7 @@
 {
-  "name": "about",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "about/src",
+  "name": "apps/dashboard",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/dashboard/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,16 +10,19 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/about",
-        "index": "about/src/index.html",
+        "outputPath": "dist/apps/dashboard",
+        "index": "apps/dashboard/src/index.html",
         "baseHref": "/",
-        "main": "about/src/main.ts",
-        "tsConfig": "about/tsconfig.app.json",
-        "assets": ["about/src/favicon.ico", "about/src/assets"],
-        "styles": ["about/src/styles.css"],
+        "main": "apps/dashboard/src/main.ts",
+        "tsConfig": "apps/dashboard/tsconfig.app.json",
+        "assets": [
+          "apps/dashboard/src/favicon.ico",
+          "apps/dashboard/src/assets"
+        ],
+        "styles": ["apps/dashboard/src/styles.css"],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "about/webpack.config.ts"
+        "webpackConfig": "apps/dashboard/webpack.config.ts"
       },
       "configurations": {
         "development": {
@@ -31,8 +34,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "about/src/environments/environment.ts",
-              "with": "about/src/environments/environment.prod.ts"
+              "replace": "apps/dashboard/src/environments/environment.ts",
+              "with": "apps/dashboard/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -41,7 +44,7 @@
           "namedChunks": false,
           "extractLicenses": true,
           "vendorChunk": false,
-          "webpackConfig": "about/webpack.config.prod.ts"
+          "webpackConfig": "apps/dashboard/webpack.config.prod.ts"
         }
       }
     },
@@ -49,16 +52,16 @@
       "executor": "@nx/react:module-federation-dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "about:build",
+        "buildTarget": "apps/dashboard:build",
         "hmr": true,
-        "port": 4201
+        "port": 4200
       },
       "configurations": {
         "development": {
-          "buildTarget": "about:build:development"
+          "buildTarget": "apps/dashboard:build:development"
         },
         "production": {
-          "buildTarget": "about:build:production",
+          "buildTarget": "apps/dashboard:build:production",
           "hmr": false
         }
       }
@@ -67,23 +70,23 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["about/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/dashboard/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "about:build",
+        "buildTarget": "apps/dashboard:build",
         "watch": false,
-        "port": 4201
+        "port": 4200
       },
       "configurations": {
         "development": {
-          "buildTarget": "about:build:development"
+          "buildTarget": "apps/dashboard:build:development"
         },
         "production": {
-          "buildTarget": "about:build:production"
+          "buildTarget": "apps/dashboard:build:production"
         }
       }
     },
@@ -91,7 +94,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "about/jest.config.ts"
+        "jestConfig": "apps/dashboard/jest.config.ts"
       }
     }
   },

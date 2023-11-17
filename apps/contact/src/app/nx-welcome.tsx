@@ -430,13 +430,7 @@ export function NxWelcome({ title }: { title: string }) {
               <span> Hello there, </span>
               Welcome {title} 👋
             </h1>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={process.env.NX_APP_BASE_URL}
-            >
-              Go to google
-            </a>
+            <a href={process.env.NX_APP_BASE_URL}>Go to Link</a>
           </div>
 
           <div id="hero" className="rounded">

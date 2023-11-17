@@ -3,10 +3,7 @@ import * as React from 'react';
 import NxWelcome from './nx-welcome';
 
 import { Link, Route, Routes } from 'react-router-dom';
-
-const About = React.lazy(() => import('about/Module'));
-const AboutTabs = React.lazy(() => import('about/Tabs'));
-
+const Contact = React.lazy(() => import('contact/Module'));
 export function App() {
   return (
     <React.Suspense fallback={null}>
@@ -14,13 +11,13 @@ export function App() {
         <li>
           <Link to="/">Home</Link>
         </li>
-
-        <AboutTabs />
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
       </ul>
       <Routes>
-        <Route path="/" element={<NxWelcome title="main" />} />
-
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<NxWelcome title="apps/dashboard" />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </React.Suspense>
   );

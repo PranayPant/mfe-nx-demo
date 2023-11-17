@@ -1,7 +1,7 @@
 {
-  "name": "main",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "main/src",
+  "name": "apps/contact",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/contact/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,16 +10,16 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/main",
-        "index": "main/src/index.html",
+        "outputPath": "dist/apps/contact",
+        "index": "apps/contact/src/index.html",
         "baseHref": "/",
-        "main": "main/src/main.ts",
-        "tsConfig": "main/tsconfig.app.json",
-        "assets": ["main/src/favicon.ico", "main/src/assets"],
-        "styles": ["main/src/styles.css"],
+        "main": "apps/contact/src/main.ts",
+        "tsConfig": "apps/contact/tsconfig.app.json",
+        "assets": ["apps/contact/src/favicon.ico", "apps/contact/src/assets"],
+        "styles": ["apps/contact/src/styles.css"],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "main/webpack.config.ts"
+        "webpackConfig": "apps/contact/webpack.config.ts"
       },
       "configurations": {
         "development": {
@@ -31,8 +31,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "main/src/environments/environment.ts",
-              "with": "main/src/environments/environment.prod.ts"
+              "replace": "apps/contact/src/environments/environment.ts",
+              "with": "apps/contact/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -41,7 +41,7 @@
           "namedChunks": false,
           "extractLicenses": true,
           "vendorChunk": false,
-          "webpackConfig": "main/webpack.config.prod.ts"
+          "webpackConfig": "apps/contact/webpack.config.prod.ts"
         }
       }
     },
@@ -49,16 +49,16 @@
       "executor": "@nx/react:module-federation-dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "main:build",
+        "buildTarget": "apps/contact:build",
         "hmr": true,
-        "port": 4200
+        "port": 4202
       },
       "configurations": {
         "development": {
-          "buildTarget": "main:build:development"
+          "buildTarget": "apps/contact:build:development"
         },
         "production": {
-          "buildTarget": "main:build:production",
+          "buildTarget": "apps/contact:build:production",
           "hmr": false
         }
       }
@@ -67,23 +67,23 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["main/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/contact/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "main:build",
+        "buildTarget": "apps/contact:build",
         "watch": false,
-        "port": 4200
+        "port": 4202
       },
       "configurations": {
         "development": {
-          "buildTarget": "main:build:development"
+          "buildTarget": "apps/contact:build:development"
         },
         "production": {
-          "buildTarget": "main:build:production"
+          "buildTarget": "apps/contact:build:production"
         }
       }
     },
@@ -91,7 +91,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "main/jest.config.ts"
+        "jestConfig": "apps/contact/jest.config.ts"
       }
     }
   },

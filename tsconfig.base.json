@@ -16,8 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@mfe-nx-demo/storybook-host": ["libs/storybook-host/src/index.ts"],
-      "about/Module": ["about/src/remote-entry.ts"],
-      "about/Tabs": ["about/src/app/tabs.tsx"]
+      "contact/Module": ["apps/contact/src/remote-entry.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
