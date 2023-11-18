@@ -11,13 +11,12 @@ Run below command to add a new remote
 nx g @nx/react:remote apps/<new_remote_app> --host="apps/dashboard"
 ```
 
-## Generate code
+## Start application
 
-If you happen to use Nx plugins, you can leverage code generators that might come with it.
-
-Run `nx list` to get a list of available plugins and whether they have generators. Then run `nx list <plugin-name>` to see what generators are available.
-
-Learn more about [Nx generators on the docs](https://nx.dev/plugin-features/use-code-generators).
+Add any remotes that you want to be started alongside `dashboard` host
+```
+pnpm start --devRemotes="dashboard"
+```
 
 ## Running tasks
 
