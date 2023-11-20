@@ -1,3 +1,5 @@
+import { Shared } from '@mfe-nx-demo/libs/shared';
+
 /*
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  This is a starter component and can be deleted.
@@ -430,6 +432,7 @@ export function NxWelcome({ title }: { title: string }) {
               <span> Hello there, </span>
               Welcome {title} 👋
             </h1>
+            <Shared name="Pranay" />
           </div>
 
           <div id="hero" className="rounded">

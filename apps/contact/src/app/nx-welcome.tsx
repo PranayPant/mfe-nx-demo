@@ -5,6 +5,8 @@
  Delete this file and get started with your project!
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
+
+import { Shared } from '@mfe-nx-demo/libs/shared';
 export function NxWelcome({ title }: { title: string }) {
   return (
     <>
@@ -430,6 +432,7 @@ export function NxWelcome({ title }: { title: string }) {
               <span> Hello there, </span>
               Welcome {title} 👋
             </h1>
+            <Shared name="Pranay" />
             <a href={process.env.NX_APP_BASE_URL}>Go to Link</a>
           </div>
 

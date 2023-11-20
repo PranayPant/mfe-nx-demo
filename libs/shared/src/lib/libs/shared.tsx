@@ -1,12 +1,13 @@
 import styles from './shared.module.css';
 
-/* eslint-disable-next-line */
-export interface SharedProps {}
+export interface SharedProps {
+  name?: string;
+}
 
-export function Shared(props: SharedProps) {
+export function Shared({ name }: SharedProps) {
   return (
     <div className={styles['container']}>
-      <h1>Welcome to Shared!</h1>
+      <h1>This is a shared component, {name || 'anonymous person!'}!</h1>
     </div>
   );
 }

@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "build": "nx build",
     "start": "nx serve apps/dashboard --open",
     "storybook": "nx storybook storybook-host"
   },
@@ -67,6 +68,7 @@
   },
   "dependencies": {
     "@swc/helpers": "~0.5.2",
+    "lodash": "^4.17.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.11.2",
