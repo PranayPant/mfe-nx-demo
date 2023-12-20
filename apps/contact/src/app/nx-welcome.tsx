@@ -433,7 +433,7 @@ export function NxWelcome({ title }: { title: string }) {
               Welcome {title} 👋
             </h1>
             <Shared name="Pranay" />
-            <a href={process.env.NX_APP_BASE_URL}>Go to Link</a>
+            <a href={process.env.NX_APP_BASE_URL}>Go to the Link</a>
           </div>
 
           <div id="hero" className="rounded">

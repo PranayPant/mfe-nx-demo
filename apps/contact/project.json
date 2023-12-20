@@ -29,6 +29,7 @@
           "vendorChunk": true
         },
         "production": {
+          "baseHref": "/contact/",
           "fileReplacements": [
             {
               "replace": "apps/contact/src/environments/environment.ts",
